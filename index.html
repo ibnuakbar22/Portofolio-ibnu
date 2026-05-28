@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ibnu Akbar — Portfolio</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ── Floating Orb Backgrounds ── -->
+  <div class="orbs" aria-hidden="true">
+    <div class="orb"></div>
+    <div class="orb"></div>
+    <div class="orb"></div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       NAVBAR
+       ══════════════════════════════════════ -->
+  <nav class="navbar">
+    <a href="#" onclick="navigateTo('home'); return false;" class="nav-logo">
+      <div class="nav-logo-icon">
+        <i class="fas fa-futbol" style="color:white; font-size:1rem;"></i>
+      </div>
+      <span style="color:inherit;">IB<span id="logo-accent">NU</span></span>
+    </a>
+
+    <div class="nav-links">
+      <button class="nav-btn" data-page="home"       onclick="navigateTo('home')">
+        <i class="fas fa-house" style="margin-right:7px;font-size:.8rem;"></i>Home
+      </button>
+      <button class="nav-btn" data-page="pengalaman" onclick="navigateTo('pengalaman')">
+        <i class="fas fa-briefcase" style="margin-right:7px;font-size:.8rem;"></i>Pengalaman
+      </button>
+      <button class="nav-btn" data-page="gallery"    onclick="navigateTo('gallery')">
+        <i class="fas fa-images" style="margin-right:7px;font-size:.8rem;"></i>Gallery
+      </button>
+      <button class="nav-btn" data-page="socials"    onclick="navigateTo('socials')">
+        <i class="fas fa-paper-plane" style="margin-right:7px;font-size:.8rem;"></i>Socials
+      </button>
+    </div>
+
+    <button class="nav-hamburger" id="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <button onclick="navigateTo('home')"><i class="fas fa-house" style="margin-right:10px;"></i>Home</button>
+    <button onclick="navigateTo('pengalaman')"><i class="fas fa-briefcase" style="margin-right:10px;"></i>Pengalaman</button>
+    <button onclick="navigateTo('gallery')"><i class="fas fa-images" style="margin-right:10px;"></i>Gallery</button>
+    <button onclick="navigateTo('socials')"><i class="fas fa-paper-plane" style="margin-right:10px;"></i>Socials</button>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       HOME PAGE  ☀️ Warm Sunrise
+       ══════════════════════════════════════ -->
+  <div id="home-page" class="page">
+    <div class="container">
+
+      <!-- Hero -->
+      <div class="home-hero">
+        <!-- Left: Text -->
+        <div>
+          <div class="home-badge">
+            <span class="badge-dot"></span>
+            Mahasiswa Semester 2 · TRPL
+          </div>
+
+          <h1 class="home-title">
+            Muhammad Ibnu
+            <span class="gradient-text">Akbar</span>
+          </h1>
+
+          <p class="home-subtitle">
+            <i class="fas fa-map-marker-alt" style="margin-right:6px;"></i>
+            Teknologi Rekayasa Perangkat Lunak
+          </p>
+
+          <p class="home-desc">
+            Menghubungkan logika <strong style="color:#f97316;">coding</strong> dan kreativitas
+            <strong style="color:#0ea5e9;">digital</strong> untuk produk fungsional dengan UX yang luar biasa.
+            Saat ini saya berfokus di
+            <span id="typewriter" style="color:#ec4899;font-weight:600;border-right:2px solid #ec4899;padding-right:2px;"></span>
+          </p>
+
+          <div class="home-tags">
+            <span class="tag tag-blue"><i class="fab fa-python"></i> Python</span>
+            <span class="tag tag-orange"><i class="fab fa-figma"></i> Figma</span>
+            <span class="tag tag-green"><i class="fas fa-database"></i> MySQL</span>
+          </div>
+
+          <div class="home-btns">
+            <button class="btn-primary" onclick="navigateTo('pengalaman')">
+              <span><i class="fas fa-eye" style="margin-right:8px;"></i>Lihat Pengalaman</span>
+            </button>
+            <button class="btn-secondary" onclick="navigateTo('socials')">
+              <i class="fas fa-paper-plane" style="margin-right:8px;color:#ec4899;"></i>Hubungi Saya
+            </button>
+          </div>
+        </div>
+
+        <!-- Right: Stickman + Ball -->
+        <div class="hero-visual">
+          <div class="hero-aura"></div>
+          <span class="floatie">⚽</span>
+          <span class="floatie">🏆</span>
+          <span class="floatie">⭐</span>
+
+          <svg class="hero-svg" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="bodyGrad" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#f97316"/>
+                <stop offset="100%" stop-color="#ec4899"/>
+              </radialGradient>
+              <filter id="glow">
+                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+
+            <!-- Ground shadow -->
+            <ellipse cx="110" cy="205" rx="50" ry="8" fill="rgba(249,115,22,0.15)"/>
+
+            <!-- Ball -->
+            <g class="svg-ball" filter="url(#glow)">
+              <circle cx="155" cy="165" r="16" fill="white" stroke="#f97316" stroke-width="2.5"/>
+              <path d="M155,152 L162,157 L160,166 L150,166 L148,157 Z" fill="#1c1917" opacity="0.6"/>
+              <path d="M155,178 L148,174 M162,157 L170,154 M148,157 L140,154" stroke="#1c1917" stroke-width="1.5" fill="none" opacity="0.5"/>
+              <animateTransform attributeName="transform" type="translate"
+                values="0,0; -5,-15; -10,-5; -5,-20; 0,0"
+                dur="1.8s" repeatCount="indefinite"/>
+            </g>
+
+            <!-- Stickman -->
+            <g filter="url(#glow)">
+              <!-- Head -->
+              <circle cx="80" cy="70" r="16" fill="url(#bodyGrad)" stroke="none"/>
+              <!-- Face -->
+              <circle cx="74" cy="67" r="2.5" fill="white"/>
+              <circle cx="86" cy="67" r="2.5" fill="white"/>
+              <path d="M74,76 Q80,81 86,76" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+              <!-- Body -->
+              <line x1="80" y1="86" x2="80" y2="138" stroke="url(#bodyGrad)" stroke-width="5" stroke-linecap="round"/>
+
+              <!-- Right arm (kicking pose) -->
+              <line x1="80" y1="100" x2="55" y2="118" stroke="url(#bodyGrad)" stroke-width="4.5" stroke-linecap="round">
+                <animateTransform attributeName="transform" type="rotate"
+                  values="0,80,100; -15,80,100; 0,80,100" dur="0.9s" repeatCount="indefinite"/>
+              </line>
+              <!-- Left arm -->
+              <line x1="80" y1="100" x2="105" y2="112" stroke="url(#bodyGrad)" stroke-width="4.5" stroke-linecap="round">
+                <animateTransform attributeName="transform" type="rotate"
+                  values="0,80,100; 12,80,100; 0,80,100" dur="0.9s" repeatCount="indefinite"/>
+              </line>
+
+              <!-- Right leg -->
+              <line x1="80" y1="138" x2="60" y2="168" stroke="url(#bodyGrad)" stroke-width="4.5" stroke-linecap="round">
+                <animateTransform attributeName="transform" type="rotate"
+                  values="0,80,138; 20,80,138; 0,80,138" dur="0.9s" repeatCount="indefinite"/>
+              </line>
+              <!-- Left leg (kicking) -->
+              <line x1="80" y1="138" x2="115" y2="158" stroke="url(#bodyGrad)" stroke-width="4.5" stroke-linecap="round">
+                <animateTransform attributeName="transform" type="rotate"
+                  values="-20,80,138; 0,80,138; -20,80,138" dur="0.9s" repeatCount="indefinite"/>
+              </line>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Tech Stack -->
+      <div class="home-stack">
+        <h2 class="section-title" style="color:#1c1917;">
+          <i class="fas fa-layer-group" style="color:#f97316;margin-right:10px;"></i>Tech Stack
+        </h2>
+        <div class="stack-grid">
+          <div class="stack-card" data-tech="figma">
+            <i class="fab fa-figma" style="color:#f24e1e;"></i>
+            <p>Figma</p>
+          </div>
+          <div class="stack-card" data-tech="python">
+            <i class="fab fa-python" style="color:#3b82f6;"></i>
+            <p>Python</p>
+          </div>
+          <div class="stack-card" data-tech="html">
+            <i class="fab fa-html5" style="color:#f97316;"></i>
+            <p>HTML5</p>
+          </div>
+          <div class="stack-card" data-tech="css">
+            <i class="fab fa-css3-alt" style="color:#0ea5e9;"></i>
+            <p>CSS3</p>
+          </div>
+          <div class="stack-card" data-tech="javascript">
+            <i class="fab fa-js" style="color:#eab308;"></i>
+            <p>JavaScript</p>
+          </div>
+          <div class="stack-card" data-tech="json">
+            <i class="fas fa-code" style="color:#10b981;"></i>
+            <p>JSON</p>
+          </div>
+          <div class="stack-card" data-tech="mysql">
+            <i class="fas fa-database" style="color:#2563eb;"></i>
+            <p>MySQL</p>
+          </div>
+          <div class="stack-card" data-tech="rstudio">
+            <i class="fas fa-chart-bar" style="color:#1e40af;"></i>
+            <p>R Studio</p>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /container -->
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <span class="footer-text">© 2025 Muhammad Ibnu Akbar. All rights reserved.</span>
+        <span class="footer-text" style="color:#f97316;font-weight:600;">
+          <i class="fas fa-futbol" style="margin-right:6px;"></i>Full Stack Dreamer
+        </span>
+      </div>
+    </footer>
+  </div><!-- /home-page -->
+
+
+  <!-- ══════════════════════════════════════
+       PENGALAMAN PAGE  ⚡ Electric Teal
+       ══════════════════════════════════════ -->
+  <div id="pengalaman-page" class="page">
+    <div class="container">
+
+      <div class="exp-header">
+        <div class="exp-badge">
+          <i class="fas fa-folder-open"></i> Portofolio
+        </div>
+        <h1 class="exp-title">Pengalaman & Proyek</h1>
+        <p class="exp-desc">Deretan proyek dan pencapaian yang telah saya kerjakan dengan penuh dedikasi.</p>
+      </div>
+
+      <!-- Category 1: Software & Web Dev -->
+      <div class="exp-category">
+        <h2 class="exp-cat-title">
+          <span class="cat-icon" style="background:linear-gradient(135deg,#06b6d4,#0ea5e9);">
+            <i class="fas fa-laptop-code"></i>
+          </span>
+          Software & Web Development
+        </h2>
+        <div class="exp-grid">
+
+          <!-- TS KOST -->
+          <div class="exp-card" style="--card-from:#065f46;--card-to:#0d9488;">
+            <div class="exp-card-top" style="background:linear-gradient(135deg,#10b981,#0d9488);">
+              <i class="fas fa-house-laptop"></i>
+              <div style="position:absolute;bottom:0;right:0;width:90px;height:90px;background:rgba(255,255,255,0.1);border-radius:50%;transform:translate(30%,30%);"></div>
+            </div>
+            <div class="exp-card-body">
+              <h3>TS KOST Website</h3>
+              <p>Membuat dan melakukan hosting website untuk mitra kost. Full deployment dengan domain custom.</p>
+              <span class="exp-chip" style="background:rgba(16,185,129,0.15);color:#34d399;border:1px solid rgba(52,211,153,0.3);">
+                <i class="fas fa-circle-check" style="font-size:.7rem;"></i> Live & Online
+              </span>
+            </div>
+          </div>
+
+          <!-- Bank Mutation -->
+          <div class="exp-card">
+            <div class="exp-card-top" style="background:linear-gradient(135deg,#0ea5e9,#2563eb);">
+              <i class="fas fa-building-columns"></i>
+              <div style="position:absolute;bottom:0;right:0;width:90px;height:90px;background:rgba(255,255,255,0.1);border-radius:50%;transform:translate(30%,30%);"></div>
+            </div>
+            <div class="exp-card-body">
+              <h3>Bank Mutation System</h3>
+              <p>Aplikasi Python simulasi sistem mutasi rekening bank dengan logika transaksi lengkap.</p>
+              <span class="exp-chip" style="background:rgba(6,182,212,0.15);color:#22d3ee;border:1px solid rgba(34,211,238,0.3);">
+                <i class="fas fa-circle-check" style="font-size:.7rem;"></i> Logic Success
+              </span>
+            </div>
+          </div>
+
+          <!-- Calorie Calculator -->
+          <div class="exp-card">
+            <div class="exp-card-top" style="background:linear-gradient(135deg,#f43f5e,#e11d48);">
+              <i class="fas fa-apple-whole"></i>
+              <div style="position:absolute;bottom:0;right:0;width:90px;height:90px;background:rgba(255,255,255,0.1);border-radius:50%;transform:translate(30%,30%);"></div>
+            </div>
+            <div class="exp-card-body">
+              <h3>Calorie Calculator</h3>
+              <p>Aplikasi kalkulator kalori dengan input BMI dan rekomendasi diet harian yang user-friendly.</p>
+              <span class="exp-chip" style="background:rgba(244,63,94,0.15);color:#fb7185;border:1px solid rgba(251,113,133,0.3);">
+                <i class="fas fa-circle-check" style="font-size:.7rem;"></i> User Friendly
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Category 2: Design -->
+      <div class="exp-category">
+        <h2 class="exp-cat-title">
+          <span class="cat-icon" style="background:linear-gradient(135deg,#f59e0b,#f97316);">
+            <i class="fas fa-palette"></i>
+          </span>
+          UI/UX & Graphic Design
+        </h2>
+        <div class="exp-grid">
+
+          <!-- Logo Champion -->
+          <div class="exp-card">
+            <div class="exp-card-top" style="background:linear-gradient(135deg,#f59e0b,#f97316);">
+              <i class="fas fa-trophy"></i>
+              <div style="position:absolute;top:10px;right:14px;font-size:2rem;">🏆</div>
+            </div>
+            <div class="exp-card-body">
+              <h3>Juara 1 — Logo Kampus</h3>
+              <p>Memenangkan kompetisi desain logo identitas kampus tingkat internal.</p>
+              <span class="exp-chip" style="background:rgba(245,158,11,0.15);color:#fbbf24;border:1px solid rgba(251,191,36,0.3);">
+                <i class="fas fa-crown" style="font-size:.7rem;"></i> CHAMPION
+              </span>
+            </div>
+          </div>
+
+          <!-- Poster Runner Up -->
+          <div class="exp-card">
+            <div class="exp-card-top" style="background:linear-gradient(135deg,#818cf8,#6366f1);">
+              <i class="fas fa-scroll"></i>
+              <div style="position:absolute;top:10px;right:14px;font-size:2rem;">🥈</div>
+            </div>
+            <div class="exp-card-body">
+              <h3>Juara 2 — Poster Digital</h3>
+              <p>Runner up kontes desain poster digital tingkat nasional.</p>
+              <span class="exp-chip" style="background:rgba(129,140,248,0.15);color:#a5b4fc;border:1px solid rgba(165,180,252,0.3);">
+                <i class="fas fa-medal" style="font-size:.7rem;"></i> RUNNER UP
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Category 3: Social Media -->
+      <div class="exp-category" style="padding-bottom:60px;">
+        <h2 class="exp-cat-title">
+          <span class="cat-icon" style="background:linear-gradient(135deg,#ec4899,#f43f5e);">
+            <i class="fas fa-bullhorn"></i>
+          </span>
+          Digital Branding & Social Media
+        </h2>
+        <div class="exp-grid">
+
+          <!-- OSIS Sekolah -->
+          <div class="exp-card">
+            <div class="exp-card-top" style="background:linear-gradient(135deg,#ec4899,#db2777);">
+              <i class="fab fa-instagram"></i>
+            </div>
+            <div class="exp-card-body">
+              <h3>Admin IG OSIS Sekolah</h3>
+              <p>Mengelola akun Instagram OSIS sekolah selama 2 tahun, meningkatkan engagement dan follower.</p>
+              <span class="exp-chip" style="background:rgba(236,72,153,0.15);color:#f9a8d4;border:1px solid rgba(249,168,212,0.3);">
+                <i class="fas fa-arrow-trend-up" style="font-size:.7rem;"></i> Engagement +
+              </span>
+            </div>
+          </div>
+
+          <!-- OSIS Provinsi -->
+          <div class="exp-card">
+            <div class="exp-card-top" style="background:linear-gradient(135deg,#a855f7,#7c3aed);">
+              <i class="fab fa-instagram"></i>
+            </div>
+            <div class="exp-card-body">
+              <h3>Admin IG Forum OSIS Prov. SLS</h3>
+              <p>Memimpin divisi digital Forum OSIS Sumatera Selatan, koordinasi konten multi-kota.</p>
+              <span class="exp-chip" style="background:rgba(168,85,247,0.15);color:#c4b5fd;border:1px solid rgba(196,181,253,0.3);">
+                <i class="fas fa-star" style="font-size:.7rem;"></i> Leader
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div><!-- /container -->
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <span class="footer-text" style="color:#475569;">© 2025 Muhammad Ibnu Akbar</span>
+        <span style="color:#06b6d4;font-size:.82rem;font-weight:600;">
+          <i class="fas fa-code" style="margin-right:6px;"></i>Built with Passion
+        </span>
+      </div>
+    </footer>
+  </div><!-- /pengalaman-page -->
+
+
+  <!-- ══════════════════════════════════════
+       GALLERY PAGE  🌌 Neon Midnight
+       ══════════════════════════════════════ -->
+  <div id="gallery-page" class="page">
+    <!-- Floating particles container -->
+    <div id="gallery-particles" style="position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;"></div>
+
+    <div class="container">
+
+      <div class="gal-header">
+        <div class="gal-badge">
+          <i class="fas fa-images"></i> Gallery
+        </div>
+        <h1 class="gal-title">Project Showcase</h1>
+        <p class="gal-desc">Koleksi visual terbaik dari proyek-proyek yang telah saya selesaikan.</p>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="gal-grid">
+
+        <!-- Card 1 -->
+        <div class="gal-card">
+          <div class="gal-scan-line"></div>
+          <div class="gal-img-wrap">
+            <img src="Project/Mitra.png" alt="TS Kost Website" loading="lazy"
+                 onerror="this.src='';this.closest('.gal-img-wrap').style.background='linear-gradient(135deg,#10b981,#0d9488)';this.style.display='none';">
+          </div>
+          <div class="gal-overlay">
+            <div class="gal-overlay-inner">
+              <h4>TS KOST Website</h4>
+              <span>Web Development</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="gal-card">
+          <div class="gal-scan-line"></div>
+          <div class="gal-img-wrap">
+            <img src="Project/Design.png" alt="Design Project" loading="lazy"
+                 onerror="this.src='';this.closest('.gal-img-wrap').style.background='linear-gradient(135deg,#f59e0b,#f97316)';this.style.display='none';">
+          </div>
+          <div class="gal-overlay">
+            <div class="gal-overlay-inner">
+              <h4>Design Project</h4>
+              <span>UI/UX Design</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="gal-card">
+          <div class="gal-scan-line"></div>
+          <div class="gal-img-wrap">
+            <img src="Project/Fostan.png" alt="Fostan Project" loading="lazy"
+                 onerror="this.src='';this.closest('.gal-img-wrap').style.background='linear-gradient(135deg,#818cf8,#6366f1)';this.style.display='none';">
+          </div>
+          <div class="gal-overlay">
+            <div class="gal-overlay-inner">
+              <h4>Fostan Project</h4>
+              <span>Graphic Design</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="gal-card">
+          <div class="gal-scan-line"></div>
+          <div class="gal-img-wrap">
+            <img src="Project/Sosial_Media.png" alt="Social Media Design" loading="lazy"
+                 onerror="this.src='';this.closest('.gal-img-wrap').style.background='linear-gradient(135deg,#ec4899,#a855f7)';this.style.display='none';">
+          </div>
+          <div class="gal-overlay">
+            <div class="gal-overlay-inner">
+              <h4>Social Media Kit</h4>
+              <span>Digital Branding</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /gal-grid -->
+    </div><!-- /container -->
+
+    <footer class="site-footer" style="border-color:rgba(217,70,239,0.15);">
+      <div class="footer-inner">
+        <span class="footer-text" style="color:#6d28d9;">© 2025 Muhammad Ibnu Akbar</span>
+        <span style="color:#d946ef;font-size:.82rem;font-weight:600;">
+          <i class="fas fa-wand-magic-sparkles" style="margin-right:6px;"></i>Creative Works
+        </span>
+      </div>
+    </footer>
+  </div><!-- /gallery-page -->
+
+
+  <!-- ══════════════════════════════════════
+       SOCIALS PAGE  🌸 Candy Bloom
+       ══════════════════════════════════════ -->
+  <div id="socials-page" class="page">
+    <div class="container">
+
+      <div class="soc-header">
+        <div class="soc-badge">
+          <i class="fas fa-paper-plane"></i> Connect
+        </div>
+        <h1 class="soc-title">Hubungi Saya</h1>
+        <p class="soc-desc">Punya proyek seru atau ingin diskusi? Reach out lewat platform favorit kamu!</p>
+      </div>
+
+      <!-- Social Cards -->
+      <div class="soc-cards">
+
+        <!-- LinkedIn -->
+        <a href="https://linkedin.com/ibnuakbar15"
+           target="_blank" rel="noopener noreferrer"
+           class="soc-card linkedin">
+          <div class="soc-icon-wrap" style="background:linear-gradient(135deg,#0a66c2,#0077b5);">
+            <i class="fab fa-linkedin-in"></i>
+          </div>
+          <div class="soc-card-name">LinkedIn</div>
+          <div class="soc-card-handle">Muhammad Ibnu Akbar</div>
+          <span class="soc-chip" style="background:#dbeafe;color:#1d4ed8;">
+            <i class="fab fa-linkedin-in" style="font-size:.8rem;"></i> Connect
+          </span>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://instagram.com/ibnuakbar_4"
+           target="_blank" rel="noopener noreferrer"
+           class="soc-card instagram">
+          <div class="soc-icon-wrap" style="background:linear-gradient(135deg,#f97316,#ec4899,#6366f1);">
+            <i class="fab fa-instagram"></i>
+          </div>
+          <div class="soc-card-name">Instagram</div>
+          <div class="soc-card-handle">@ibnuakbar_4</div>
+          <span class="soc-chip" style="background:#fce7f3;color:#be185d;">
+            <i class="fab fa-instagram" style="font-size:.8rem;"></i> Follow
+          </span>
+        </a>
+
+        <!-- TikTok -->
+        <a href="https://tiktok.com/@ibnuakbar_15"
+           target="_blank" rel="noopener noreferrer"
+           class="soc-card tiktok">
+          <div class="soc-icon-wrap" style="background:#0f172a;position:relative;overflow:hidden;">
+            <i class="fab fa-tiktok" style="position:relative;z-index:1;"></i>
+            <!-- TikTok color echo -->
+            <div style="position:absolute;top:-5px;left:-5px;right:-5px;bottom:-5px;background:linear-gradient(135deg,rgba(105,201,255,0.3),rgba(254,44,85,0.3));border-radius:inherit;"></div>
+          </div>
+          <div class="soc-card-name">TikTok</div>
+          <div class="soc-card-handle">@ibnuakbar_15</div>
+          <span class="soc-chip" style="background:#f1f5f9;color:#475569;">
+            <i class="fab fa-tiktok" style="font-size:.8rem;"></i> Follow
+          </span>
+        </a>
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/6285835695375"
+           target="_blank" rel="noopener noreferrer"
+           class="soc-card whatsapp">
+          <div class="soc-icon-wrap" style="background:linear-gradient(135deg,#25d366,#128c7e);">
+            <i class="fab fa-whatsapp"></i>
+          </div>
+          <div class="soc-card-name">WhatsApp</div>
+          <div class="soc-card-handle">+62 858-3569-5375</div>
+          <span class="soc-chip" style="background:#dcfce7;color:#15803d;">
+            <i class="fab fa-whatsapp" style="font-size:.8rem;"></i> Chat
+          </span>
+        </a>
+
+      </div><!-- /soc-cards -->
+
+      <!-- CV Download Banner -->
+      <div class="cv-banner">
+        <div class="cv-banner-left">
+          <h3><i class="fas fa-file-pdf" style="color:#ec4899;margin-right:10px;"></i>Curriculum Vitae</h3>
+          <p>Download CV lengkap saya dalam format PDF — siap untuk referensi atau rekrutmen.</p>
+        </div>
+        <a href="cv/Ibnu_Akbar_CV.pdf" download="CV_Muhammad_Ibnu_Akbar.pdf" class="btn-download-cv">
+          <i class="fas fa-download"></i>
+          Download CV
+        </a>
+      </div>
+
+      <div class="soc-footer">
+        <p><i class="fas fa-heart" style="color:#ec4899;margin-right:6px;"></i>Terima kasih telah mengunjungi portofolio saya!</p>
+      </div>
+
+    </div><!-- /container -->
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <span class="footer-text">© 2025 Muhammad Ibnu Akbar. All rights reserved.</span>
+        <span style="color:#ec4899;font-size:.82rem;font-weight:600;">
+          <i class="fas fa-heart" style="margin-right:6px;"></i>Made with Love
+        </span>
+      </div>
+    </footer>
+  </div><!-- /socials-page -->
+
+
+  <!-- Script -->
+  <script src="script.js"></script>
+
+  <!-- Extra inline styles for nav logo accent per theme -->
+  <style>
+    .theme-home       #logo-accent { color: #f97316; }
+    .theme-pengalaman #logo-accent { color: #06b6d4; }
+    .theme-gallery    #logo-accent { color: #d946ef; }
+    .theme-socials    #logo-accent { color: #ec4899; }
+
+    .theme-pengalaman .nav-logo,
+    .theme-gallery    .nav-logo { color: white; }
+    .theme-home       .nav-logo,
+    .theme-socials    .nav-logo { color: #1c1917; }
+  </style>
+
+</body>
+</html>
